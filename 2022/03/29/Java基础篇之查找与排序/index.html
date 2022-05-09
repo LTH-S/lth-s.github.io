@@ -1,0 +1,693 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon2.png">
+  <link rel="icon" href="/img/favicon2.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="桃花er">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1. 二分查找(⭐)要求 能够用自己语言描述二分查找算法 能够手写二分查找代码 能够解答一些变化后的考法  二分查找代码算法思路 前提：有已排序数组 A（假设已经做好）  定义左边界 L、右边界 R，确定搜索范围，循环执行二分查找（3、4两步）  获取中间索引 M &#x3D; (L+R) &#x2F;2  中间索引的值  A[M] 与待搜索的值 T 进行比较 ① A[M] &#x3D;&amp;#x3D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础篇之查找与排序">
+<meta property="og:url" content="http://example.com/2022/03/29/Java%E5%9F%BA%E7%A1%80%E7%AF%87%E4%B9%8B%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:site_name" content="桃花er的Blog">
+<meta property="og:description" content="1. 二分查找(⭐)要求 能够用自己语言描述二分查找算法 能够手写二分查找代码 能够解答一些变化后的考法  二分查找代码算法思路 前提：有已排序数组 A（假设已经做好）  定义左边界 L、右边界 R，确定搜索范围，循环执行二分查找（3、4两步）  获取中间索引 M &#x3D; (L+R) &#x2F;2  中间索引的值  A[M] 与待搜索的值 T 进行比较 ① A[M] &#x3D;&amp;#x3D">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/java.jpg">
+<meta property="article:published_time" content="2022-03-29T02:31:52.000Z">
+<meta property="article:modified_time" content="2022-05-09T11:11:33.834Z">
+<meta property="article:author" content="桃花er">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/java.jpg">
+  
+  
+  <title>Java基础篇之查找与排序 - 桃花er的Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>🌸桃花erの博客🌸</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Java基础篇之查找与排序">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      桃花er
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-03-29 10:31" pubdate>
+        2022年3月29日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      7.1k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      60 分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Java基础篇之查找与排序</h1>
+            
+            <div class="markdown-body">
+              <h2 id="1-二分查找-⭐"><a href="#1-二分查找-⭐" class="headerlink" title="1. 二分查找(⭐)"></a>1. 二分查找(⭐)</h2><h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><ul>
+<li>能够用自己语言<strong>描述二分查找算法</strong></li>
+<li>能够<strong>手写</strong>二分查找代码</li>
+<li>能够解答一些变化后的考法</li>
+</ul>
+<h3 id="二分查找代码算法思路"><a href="#二分查找代码算法思路" class="headerlink" title="二分查找代码算法思路"></a>二分查找代码算法思路</h3><ol>
+<li><p>前提：有已排序数组 A（假设已经做好）</p>
+</li>
+<li><p>定义左边界 L、右边界 R，确定搜索范围，循环执行二分查找（3、4两步）</p>
+</li>
+<li><p>获取中间索引 M &#x3D; (L+R) &#x2F;2</p>
+</li>
+<li><p>中间索引的值  A[M] 与待搜索的值 T 进行比较</p>
+<p>① A[M] &#x3D;&#x3D; T 表示找到，返回中间索引</p>
+<p>② A[M] &gt; T，中间值右侧的其它元素都大于 T，无需比较，中间索引左边去找，M - 1 设置为右边界，重新查找</p>
+<p>③ A[M] &lt; T，中间值左侧的其它元素都小于 T，无需比较，中间索引右边去找， M + 1 设置为左边界，重新查找</p>
+</li>
+<li><p>当 L &gt; R 时，表示没有找到，应结束循环</p>
+</li>
+</ol>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>下面这个算法是基于Arrays.binarySearch实现的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></div></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BinarySearch</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span>[] a = &#123;<span class="hljs-number">9</span>, <span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>&#125;;<br>        Arrays.sort(a);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> binarySearch(a, <span class="hljs-number">7</span>);<br>        System.out.println(index);<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">binarySearch</span><span class="hljs-params">(<span class="hljs-type">int</span>[] a, <span class="hljs-type">int</span> target)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, r = a.length - <span class="hljs-number">1</span>, mid;<br>        <span class="hljs-keyword">while</span> (l &lt;= r) &#123;<br>            <span class="hljs-comment">// 等价于(l+r)/2，但是如果r是Integer.MAX_VALUE的话，可能会导致溢出。</span><br>            mid = (l + r) &gt;&gt;&gt; <span class="hljs-number">1</span>; <br>            <span class="hljs-comment">// a[mid]与target相同</span><br>            <span class="hljs-keyword">if</span> (a[mid] == target) &#123;<br>                <span class="hljs-keyword">return</span> mid;<br>            &#125;<br>            <span class="hljs-comment">// a[mid]比target大，说明在左边</span><br>            <span class="hljs-keyword">if</span> (a[mid] &gt; target) &#123;<br>                r = mid - <span class="hljs-number">1</span>;<br>            &#125;<br>            <span class="hljs-comment">// a[mid]比target小，说明在右边</span><br>            <span class="hljs-keyword">if</span> (a[mid] &lt; target) &#123;<br>                l = mid + <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="选择题考法"><a href="#选择题考法" class="headerlink" title="选择题考法"></a>选择题考法</h3><p><strong>口诀：奇数二分取中间，偶数二分取中间靠左</strong></p>
+<ol>
+<li><p>有一个有序表为 1,5,8,11,19,22,31,35,40,45,48,49,50 当二分查找值为 48 的结点时，查找成功需要比较的次数 </p>
+</li>
+<li><p>使用二分法在序列 1,4,6,7,15,33,39,50,64,78,75,81,89,96 中查找元素 81 时，需要经过（   ）次比较</p>
+</li>
+<li><p>在拥有128个元素的数组中二分查找一个数，需要比较的次数最多不超过多少次</p>
+</li>
+</ol>
+<p>对于前两个题目，记得一个简要判断口诀：<strong>奇数二分取中间，偶数二分取中间靠左</strong>。对于后一道题目，需要知道公式：<strong>n &#x3D; log2^N</strong> 所以说，128个元素需要7次，其中 n 为查找次数，N 为元素个数</p>
+<h2 id="2-冒泡排序-⭐"><a href="#2-冒泡排序-⭐" class="headerlink" title="2. 冒泡排序(⭐)"></a>2. 冒泡排序(⭐)</h2><h3 id="要求-1"><a href="#要求-1" class="headerlink" title="要求"></a>要求</h3><ul>
+<li>能够用自己语言<strong>描述冒泡排序算法</strong></li>
+<li>能够<strong>手写</strong>冒泡排序代码</li>
+<li>了解一些冒泡排序的<strong>优化手段</strong></li>
+</ul>
+<h3 id="冒泡排序算法思路"><a href="#冒泡排序算法思路" class="headerlink" title="冒泡排序算法思路"></a>冒泡排序算法思路</h3><ol>
+<li>依次比较数组中相邻两个元素大小，若 a[j] &gt; a[j+1]，则交换两个元素，两两都比较一遍称为一轮冒泡，结果是让最大的元素排至最后</li>
+<li>重复以上步骤，直到整个数组有序</li>
+</ol>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">BubbleSort</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span>[] a = &#123;<span class="hljs-number">9</span>, <span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>&#125;;<br>        bubbleSort(a);<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">bubbleSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] a)</span> &#123;<br>        <span class="hljs-comment">// 循环次数只用循环a.length-1次，比如说8个元素，只用循环7次即可排序完成。</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; a.length - <span class="hljs-number">1</span>; j++) &#123;<br>            <span class="hljs-comment">// 记录是否进行交换，如果没不再交换了就直接退出循环。</span><br>            <span class="hljs-type">boolean</span> <span class="hljs-variable">flag</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span>;<br>            <span class="hljs-comment">// 只用比较a.length-1-j次，因为有j个数已经排好了，没必要进行比较了。</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; a.length - <span class="hljs-number">1</span> - j; i++) &#123;<br>                <span class="hljs-keyword">if</span> (a[i] &gt; a[i + <span class="hljs-number">1</span>]) &#123;<br>                    swap(a, i, i + <span class="hljs-number">1</span>);<br>                    flag = <span class="hljs-literal">true</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-comment">// 如果这一遍循环没有进行交换，则说明数组已经排序好了，则直接退出循环。</span><br>            <span class="hljs-keyword">if</span> (!flag) &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            System.out.println(Arrays.toString(a));<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(<span class="hljs-type">int</span>[] a, <span class="hljs-type">int</span> i, <span class="hljs-type">int</span> j)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> a[i];<br>        a[i] = a[j];<br>        a[j] = temp;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>优化点1：每经过一轮冒泡，内层循环就可以减少一次（<strong>通过内层循环条件 -j 来实现</strong>）</li>
+<li>优化点2：如果某一轮冒泡没有发生交换，则表示所有数据有序，可以结束外层循环（<strong>设置标记变量来实现</strong>）</li>
+</ul>
+<p><strong>进一步优化</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">bubble_v2</span><span class="hljs-params">(<span class="hljs-type">int</span>[] a)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> a.length - <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">last</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-comment">// 表示最后一次交换索引位置</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            System.out.println(<span class="hljs-string">&quot;比较次数&quot;</span> + i);<br>            <span class="hljs-keyword">if</span> (a[i] &gt; a[i + <span class="hljs-number">1</span>]) &#123;<br>                Utils.swap(a, i, i + <span class="hljs-number">1</span>);<br>                last = i;<br>            &#125;<br>        &#125;<br>        n = last;<br>        System.out.println(<span class="hljs-string">&quot;第轮冒泡&quot;</span><br>                           + Arrays.toString(a));<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>每轮冒泡时，最后一次交换索引可以作为下一轮冒泡的比较次数，如果这个值为零，表示整个数组有序，直接退出外层循环即可</li>
+</ul>
+<h2 id="3-选择排序-不稳定"><a href="#3-选择排序-不稳定" class="headerlink" title="3. 选择排序(不稳定)"></a>3. 选择排序(不稳定)</h2><h3 id="要求-2"><a href="#要求-2" class="headerlink" title="要求"></a>要求</h3><ul>
+<li>能够用自己语言<strong>描述选择排序算法</strong></li>
+<li>能够<strong>比较选择排序与冒泡排序</strong></li>
+<li>理解<strong>非稳定排序与稳定排序</strong></li>
+</ul>
+<h3 id="选择排序算法思路"><a href="#选择排序算法思路" class="headerlink" title="选择排序算法思路"></a>选择排序算法思路</h3><ol>
+<li><p>将数组分为两个子集，已排序的和未排序的，每一轮从未排序的子集中选出最小的元素，放入排序子集</p>
+</li>
+<li><p>重复以上步骤，直到整个数组有序</p>
+</li>
+</ol>
+<h3 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">SelectionSort</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span>[] a = &#123;<span class="hljs-number">9</span>, <span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>&#125;;<br>        selectionSort(a);<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">selectionSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] a)</span> &#123;<br>        <span class="hljs-comment">// 只用循环a.length-1次，比如说8个元素，只用循环7次即可排序完成。</span><br>        <span class="hljs-comment">// i变量代表着每轮选择的最小元素要放到的索引位置。</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; a.length - <span class="hljs-number">1</span>; i++) &#123;<br>            <span class="hljs-comment">// 每轮循环找到的最小元素，初始值从i开始</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">num</span> <span class="hljs-operator">=</span> i;<br>            <span class="hljs-comment">// 从当前元素开始，与后面所有元素进行比较，选出最小的元素。</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> num + <span class="hljs-number">1</span>; j &lt; a.length; j++) &#123;<br>                <span class="hljs-comment">// 如果遍历到某个元素比a[num]小，则将该元素下标赋值给num</span><br>                <span class="hljs-keyword">if</span> (a[num] &gt; a[j]) &#123;<br>                    num = j;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (num != i) &#123;<br>                <span class="hljs-comment">// 将这次循环找到的最小的元素放入i位置。</span><br>                swap(a, num, i);<br>            &#125;<br>            System.out.println(Arrays.toString(a));<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(<span class="hljs-type">int</span>[] a, <span class="hljs-type">int</span> i, <span class="hljs-type">int</span> j)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> a[i];<br>        a[i] = a[j];<br>        a[j] = temp;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>优化点：为减少交换次数，每一轮可以<strong>先找最小的索引</strong>，在每轮<strong>最后再交换</strong>元素</li>
+</ul>
+<h3 id="冒泡排序-vs-选择排序"><a href="#冒泡排序-vs-选择排序" class="headerlink" title="冒泡排序 vs 选择排序"></a>冒泡排序 vs 选择排序</h3><ol>
+<li>二者平均<strong>时间复杂度</strong>都是 O(n^2)</li>
+<li>选择排序一般要快于冒泡，因为其交换次数少(记录下标形式)      <strong>插入 &gt; 选择 &gt; 冒泡</strong></li>
+<li>但<strong>如果集合有序度高，冒泡优于选择</strong></li>
+</ol>
+<h2 id="4-插入排序"><a href="#4-插入排序" class="headerlink" title="4. 插入排序"></a>4. 插入排序</h2><h3 id="要求-3"><a href="#要求-3" class="headerlink" title="要求"></a>要求</h3><ul>
+<li>能够用自己语言描述插入排序算法</li>
+<li>能够<strong>比较插入排序与选择排序</strong></li>
+</ul>
+<h3 id="插入排序算法思路"><a href="#插入排序算法思路" class="headerlink" title="插入排序算法思路"></a>插入排序算法思路</h3><ol>
+<li><p>将数组分为两个区域，排序区域和未排序区域，每一轮从未排序区域中取出第一个元素，插入到排序区域（需保证顺序）</p>
+</li>
+<li><p>重复以上步骤，直到整个数组有序</p>
+</li>
+</ol>
+<h3 id="代码实现-3"><a href="#代码实现-3" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">InsertSort</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span>[] a = &#123;<span class="hljs-number">9</span>, <span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>&#125;;<br>        insertSort(a);<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">insertSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] a)</span> &#123;<br>        <span class="hljs-comment">// i代表待插入元素的索引，从第二个元素开始，也就是下标为1的元素开始遍历。</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; a.length; i++) &#123;<br>            <span class="hljs-comment">// 代表待插入的元素值</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">target</span> <span class="hljs-operator">=</span> a[i];<br>            <span class="hljs-comment">// sortedIndex代表已经排好序的元素末尾索引，初始值为i-1</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">sortedIndex</span> <span class="hljs-operator">=</span> i - <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">for</span> (; sortedIndex &gt;= <span class="hljs-number">0</span>; sortedIndex--) &#123;<br>                <span class="hljs-comment">// 将新元素与前面的元素一个个比较，如果小于前面的元素</span><br>                <span class="hljs-keyword">if</span> (target &lt; a[sortedIndex]) &#123;<br>                    <span class="hljs-comment">// 前面的元素就往后移一位。</span><br>                    a[sortedIndex + <span class="hljs-number">1</span>] = a[sortedIndex];<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-comment">// 退出循环，减少比较次数。</span><br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>            a[sortedIndex + <span class="hljs-number">1</span>] = target;<br>            System.out.println(Arrays.toString(a));<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="插入排序-vs-选择排序"><a href="#插入排序-vs-选择排序" class="headerlink" title="插入排序 vs 选择排序"></a>插入排序 vs 选择排序</h3><ol>
+<li>二者平均<strong>时间复杂度</strong>都是 O(n^2)</li>
+<li>大部分时间，插入都略优于选择。  <strong>插入 &gt; 选择 &gt; 冒泡</strong></li>
+<li><strong>有序集合</strong>的插入时间复杂度为O(n)</li>
+</ol>
+<p><strong>优点</strong>：小数据量排序，都会优先选择插入排序</p>
+<h2 id="5-希尔排序-不稳定"><a href="#5-希尔排序-不稳定" class="headerlink" title="5. 希尔排序(不稳定)"></a>5. 希尔排序(不稳定)</h2><h3 id="要求-4"><a href="#要求-4" class="headerlink" title="要求"></a>要求</h3><ul>
+<li>能够用自己语言<strong>描述希尔排序算法</strong></li>
+</ul>
+<h3 id="希尔排序算法思路"><a href="#希尔排序算法思路" class="headerlink" title="希尔排序算法思路"></a>希尔排序算法思路</h3><ol>
+<li><p>首先<strong>选取一个间隙序列</strong>，如 **(n&#x2F;2，n&#x2F;4 … 1)**，n 为数组长度</p>
+</li>
+<li><p>每一轮将间隙相等的元素视为一组，对组内元素进行插入排序，目的有二</p>
+<p>① 少量元素插入排序速度很快</p>
+<p>② <strong>让组内值较大的元素更快地移动到后方</strong></p>
+</li>
+<li><p><strong>当间隙逐渐减少，直至为 1 时，即可完成排序</strong></p>
+</li>
+</ol>
+<h2 id="6-快速排序-不稳定⭐"><a href="#6-快速排序-不稳定⭐" class="headerlink" title="6. 快速排序(不稳定⭐)"></a>6. 快速排序(不稳定⭐)</h2><h3 id="要求-5"><a href="#要求-5" class="headerlink" title="要求"></a>要求</h3><ul>
+<li>能够<strong>用自己语言描述快速排序算法</strong></li>
+<li>掌握<strong>手写</strong>单边循环、双边循环代码之一</li>
+<li>能够<strong>说明快排特点</strong></li>
+<li>了解<strong>洛穆托</strong>与<strong>霍尔</strong>两种分区方案的性能比较</li>
+</ul>
+<h3 id="快速排序算法思路（总）"><a href="#快速排序算法思路（总）" class="headerlink" title="快速排序算法思路（总）"></a>快速排序算法思路（总）</h3><ol>
+<li><ol>
+<li><strong>让小于基准点的元素的进入一个分区，大于基准点的元素的进入另一个分区</strong></li>
+<li>当分区完成时，<strong>基准点元素的位置就是其最终位置</strong></li>
+</ol>
+</li>
+<li>在子分区内重复以上过程，直至子分区元素个数少于等于 1，这体现的是分而治之的思想 </li>
+<li>从以上描述可以看出，一个关键在于分区算法，常见的有洛穆托分区方案、双边循环分区方案、霍尔分区方案</li>
+</ol>
+<h3 id="单边循环快排（lomuto-洛穆托分区方案）"><a href="#单边循环快排（lomuto-洛穆托分区方案）" class="headerlink" title="单边循环快排（lomuto 洛穆托分区方案）"></a>单边循环快排（lomuto 洛穆托分区方案）</h3><ol>
+<li><p>选择<strong>最右元素</strong>作为基准点元素</p>
+</li>
+<li><p><strong>j 指针负责找到比基准点小的元素</strong>，一旦找到则与 i 进行交换</p>
+</li>
+<li><p><strong>i 指针维护小于基准点元素的边界</strong>，也是每次交换的目标索引</p>
+</li>
+<li><p>最后基准点与 i 交换，i 即为分区位置</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">QuickSort1</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span>[] a = &#123;<span class="hljs-number">9</span>, <span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>&#125;;<br>        quickSort(a, <span class="hljs-number">0</span>, a.length - <span class="hljs-number">1</span>);<br>        System.out.println(Arrays.toString(a));<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">quickSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] a, <span class="hljs-type">int</span> low, <span class="hljs-type">int</span> high)</span> &#123;<br>        <span class="hljs-comment">// 如果区间内没有元素，则直接return</span><br>        <span class="hljs-keyword">if</span> (low &gt;= high) &#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-comment">// p是基准的索引值</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> partition(a, low, high);<br>        <span class="hljs-comment">// 左边分区的递归</span><br>        quickSort(a, low, p - <span class="hljs-number">1</span>);<br>        <span class="hljs-comment">// 右边分区的递归</span><br>        quickSort(a, p + <span class="hljs-number">1</span>, high);<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> low  数组的左边界</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> high 数组的右边界</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">partition</span><span class="hljs-params">(<span class="hljs-type">int</span>[] a, <span class="hljs-type">int</span> low, <span class="hljs-type">int</span> high)</span> &#123;<br>        <span class="hljs-comment">// pivot是基准点元素，这里选择数组最右边的元素作为基准点</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">pivot</span> <span class="hljs-operator">=</span> a[high];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> low;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> low; j &lt; high; j++) &#123;<br>            <span class="hljs-comment">// 如果当前元素小于pivot，就让i与j互换</span><br>            <span class="hljs-keyword">if</span> (a[j] &lt; pivot) &#123;<br>                swap(a, i, j);<br>                i++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">// 交换i与pivot，让基准点左边全是小于pivot的，右边全是大于pivot的。</span><br>        swap(a, high, i);<br>        <span class="hljs-keyword">return</span> i;<br>    &#125;<br><br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(<span class="hljs-type">int</span>[] a, <span class="hljs-type">int</span> i, <span class="hljs-type">int</span> j)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> a[i];<br>        a[i] = a[j];<br>        a[j] = temp;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="双边循环快排（不完全等价于-hoare-霍尔分区方案）"><a href="#双边循环快排（不完全等价于-hoare-霍尔分区方案）" class="headerlink" title="双边循环快排（不完全等价于 hoare 霍尔分区方案）"></a>双边循环快排（不完全等价于 hoare 霍尔分区方案）</h3><ol>
+<li>选择<strong>最左元素</strong>作为基准点元素</li>
+<li><strong>j 指针负责从右向左找比基准点小的元素</strong></li>
+<li><strong>i 指针负责从左向右找比基准点大的元素</strong>，一旦找到二者交换，直至 i，j 相交</li>
+<li>最后基准点与 i（此时 i 与 j 相等）交换，i 即为分区位置</li>
+</ol>
+<p><strong>要点</strong></p>
+<ol>
+<li>基准点在左边，并且要<strong>先 j 后 i</strong></li>
+<li>while( <strong>i</strong> **&lt; j** &amp;&amp; a[j] &gt; pivot ) j– </li>
+<li>while ( <strong>i</strong> <strong>&lt; j</strong> &amp;&amp; a[i] &lt;&#x3D; pivot ) i++</li>
+</ol>
+<h3 id="为什么内层循环还需要判断i-lt-j"><a href="#为什么内层循环还需要判断i-lt-j" class="headerlink" title="为什么内层循环还需要判断i&lt;j"></a>为什么内层循环还需要判断i&lt;j</h3><p>如果数组为[5，1，2，3，6，7，8]，先j–，从后往前找到3后，再i++找，找到6后，再交换，此时会出现问题。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">QuickSort2</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span>[] a = &#123;<span class="hljs-number">9</span>, <span class="hljs-number">3</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">1</span>, <span class="hljs-number">4</span>&#125;;<br>        quickSort(a, <span class="hljs-number">0</span>, a.length - <span class="hljs-number">1</span>);<br>        System.out.println(Arrays.toString(a));<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">quickSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] a, <span class="hljs-type">int</span> low, <span class="hljs-type">int</span> high)</span> &#123;<br>        <span class="hljs-comment">// 如果区间内没有元素，则直接return</span><br>        <span class="hljs-keyword">if</span> (low &gt;= high) &#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-comment">// p是基准的索引值</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> partition(a, low, high);<br>        <span class="hljs-comment">// 左边分区的递归</span><br>        quickSort(a, low, p - <span class="hljs-number">1</span>);<br>        <span class="hljs-comment">// 右边分区的递归</span><br>        quickSort(a, p + <span class="hljs-number">1</span>, high);<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">partition</span><span class="hljs-params">(<span class="hljs-type">int</span>[] a, <span class="hljs-type">int</span> low, <span class="hljs-type">int</span> high)</span> &#123;<br>        <span class="hljs-comment">// 以左边的为基准元素</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">pivot</span> <span class="hljs-operator">=</span> a[low];<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> low;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> high;<br>        <span class="hljs-keyword">while</span> (i &lt; j) &#123;<br>            <span class="hljs-comment">// j 从右边开始，找比pivot小的元素下标</span><br>            <span class="hljs-keyword">while</span> (i &lt; j &amp;&amp; a[j] &gt; pivot) &#123;<br>                j--;<br>            &#125;<br>            <span class="hljs-comment">// i 从左边开始，找比pivot大的元素下标</span><br>            <span class="hljs-keyword">while</span> (i &lt; j &amp;&amp; a[i] &lt;= pivot) &#123;<br>                i++;<br>            &#125;<br>            swap(a, i, j);<br>        &#125;<br>        <span class="hljs-comment">// 将基准元素与j/i进行交换，此时i与j指向的是同一元素。</span><br>        swap(a, low, j);<br>        System.out.println(Arrays.toString(a));<br>        <span class="hljs-keyword">return</span> j;<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(<span class="hljs-type">int</span>[] a, <span class="hljs-type">int</span> i, <span class="hljs-type">int</span> j)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> a[i];<br>        a[i] = a[j];<br>        a[j] = temp;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="快排特点"><a href="#快排特点" class="headerlink" title="快排特点"></a>快排特点</h3><ol>
+<li><p>平均时间复杂度是 O(nlog2^⁡n )，最坏时间复杂度 O(n^2)</p>
+</li>
+<li><p><strong>数据量较大时</strong>，优势非常明显</p>
+</li>
+</ol>
+<p><strong>洛穆托分区方案 vs 霍尔分区方案</strong></p>
+<ul>
+<li>霍尔的移动次数平均来讲比洛穆托少3倍<h2 id="稳定排序和不稳定排序"><a href="#稳定排序和不稳定排序" class="headerlink" title="稳定排序和不稳定排序"></a>稳定排序和不稳定排序</h2></li>
+</ul>
+<p>稳定排序指，按对象中不同字段进行多次排序（如先按花色排序再按大小排序），<strong>不会打乱同值元素的顺序</strong>，不稳定排序则反之。<br><img src="https://img-blog.csdnimg.cn/44726d6565ac416a91c612f8dfdd47fc.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qGD6IqxZXI=,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Java/">Java</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/04/03/git%20--reset%20hard%E5%91%BD%E4%BB%A4%E5%9B%9E%E9%80%80%E7%89%88%E6%9C%AC%E5%90%8E%E6%81%A2%E5%A4%8D/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">git --reset hard命令回退版本后恢复</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/03/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96%E5%A4%8D%E4%B9%A0%EF%BC%88%E7%AC%AC%E4%B8%89%E7%AB%A0%EF%BC%89/">
+                        <span class="hidden-mobile">数据库优化复习（第三章）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+      <div class="col-lg-7 mx-auto nopadding-x-md">
+        <div class="container custom mx-auto">
+          <link rel="stylesheet" href="/dist/APlayer.min.css"> <script src="/js/diyjquery-3.4.1.js"></script> <script src="/js/diyjquery.pjax.js"></script> # <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+<div id="aplayer"></div> <script type="text/javascript" src="/dist/APlayer.min.js"></script> <script type="text/javascript" src="/js/diy/music.js"></script> 
+        </div>
+      </div>
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div>桃花er的博客 | 记录成长的过程</div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+  <!-- 备案信息 -->
+  <div class="beian">
+    <span>
+      <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        粤ICP证2021131483号
+      </a>
+    </span>
+    
+      
+        <span>
+          <a
+            href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=2021131483"
+            rel="nofollow noopener"
+            class="beian-police"
+            target="_blank"
+          >
+            
+              <span style="visibility: hidden; width: 0">|</span>
+              <img src="/img/police_beian.png" srcset="/img/loading.gif" lazyload alt="police-icon"/>
+            
+            <span>粤ICP备2021131483号</span>
+          </a>
+        </span>
+      
+    
+  </div>
+
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/diy/timeDate.js"></script>
+<script src="/js/diy/xiantiao.js"></script>
+<script src="/js/diy/dianjichuzi.js"></script>
+<script src="//cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="//cdn.jsdelivr.net/gh/metowolf/Metingjs@1.2/dist/Meting.min.js"></script>
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":350},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
