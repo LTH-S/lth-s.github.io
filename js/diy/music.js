@@ -37,8 +37,5 @@ const ap = new APlayer({
 		url: 'http://music.163.com/song/media/outer/url?id=308299.mp3',
 		cover: 'https://p1.music.126.net/dLkalW4CyC6hAZQS6xXFeA==/109951163649564629.jpg?param=130y130',
 	}
-
-	// url: 'http://music.163.com/song/media/outer/url?id=308299.mp3',
-	// https://music.163.com/#/song?id=308299
 	]
 });
