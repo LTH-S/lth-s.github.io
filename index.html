@@ -1,12 +1,22 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LTH">
+  <meta name="keywords" content="">
   
-  <title>桃花er的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="桃花er的博客">
+    <meta name="description" content="桃花er的博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="桃花er的博客">
 <meta property="og:url" content="http://example.com/index.html">
@@ -14,729 +24,447 @@
 <meta property="og:description" content="桃花er的博客">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="LTH">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="桃花er的博客" type="application/atom+xml">
+<meta name="twitter:card" content="summary_large_image">
   
   
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
-    
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <title>桃花er的博客</title>
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
 
-  
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 6.1.0"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">桃花er的博客</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
         
-      </nav>
-      <nav id="sub-nav">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-数据库优化" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/" class="article-date">
-  <time class="dt-published" datetime="2022-05-09T02:49:15.000Z" itemprop="datePublished">2022-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/">数据库优化复习笔记</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="数据库优化复习笔记"><a href="#数据库优化复习笔记" class="headerlink" title="数据库优化复习笔记"></a>数据库优化复习笔记</h1><h2 id="第一章：概述"><a href="#第一章：概述" class="headerlink" title="第一章：概述"></a>第一章：概述</h2><h3 id="数据库的性能优化"><a href="#数据库的性能优化" class="headerlink" title="数据库的性能优化"></a>数据库的性能优化</h3><ol>
-<li>计算机系统的优化（硬件均衡）</li>
-<li>SQL语句的优化（通过增加索引、设置参数让MySQL的执行计划更优）</li>
-<li>架构的优化（<strong>最有效</strong>，读多写少可以设计为读写分离）</li>
-</ol>
-<h3 id="数据库发展阶段"><a href="#数据库发展阶段" class="headerlink" title="数据库发展阶段"></a>数据库发展阶段</h3><p>人工管理阶段 —&gt; 文件系统阶段 —&gt; 数据库发展阶段</p>
-<h3 id="数据库的分类"><a href="#数据库的分类" class="headerlink" title="数据库的分类"></a>数据库的分类</h3><p>关系型数据库</p>
-<img src="C:\Users\LTH\AppData\Roaming\Typora\typora-user-images\image-20220315125516987.png" alt="image-20220315125516987" style="zoom:67%;" /> 
-
-<p>非关系型数据库</p>
-<img src="C:\Users\LTH\AppData\Roaming\Typora\typora-user-images\image-20220315125535713.png" alt="image-20220315125535713" style="zoom:50%;" /> 
-
-
-
-<table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">关系型</th>
-<th align="center">非关系型</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>优点</strong></td>
-<td align="center"><strong>1、</strong>都是使用<strong>表结构</strong>易于维护；<strong>2、SQL语言通用</strong>，使用方便复杂操作；<strong>3、</strong>支持SQL，可用于一个表以及多个表之间非常<strong>复杂的查询</strong>。</td>
-<td align="center"><strong>1、格式灵活</strong>：存储数据的格式可以是key,value形式、文档形式、图片形式等等；<strong>2、速度快</strong>；<strong>3、高扩展性</strong>；<strong>4、成本低</strong>：nosql数据库部署简单</td>
-</tr>
-<tr>
-<td align="center"><strong>缺点</strong></td>
-<td align="center"><strong>1、读写性能比较差</strong>；<strong>2、</strong>固定的表结构，<strong>灵活度</strong>稍欠；<strong>3、</strong>高并发读写需求，硬盘I&#x2F;O是一个很大的瓶颈。</td>
-<td align="center"><strong>1、不提供sql支持</strong>，学习和使用成本较高；<strong>2、无事务处理</strong>；<strong>3、</strong>数据结构相对复杂，复杂查询方面稍欠。</td>
-</tr>
-</tbody></table>
-<h3 id="主流版本与分支"><a href="#主流版本与分支" class="headerlink" title="主流版本与分支"></a>主流版本与分支</h3><p><strong>版本：</strong><a target="_blank" rel="noopener" href="https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.22-1.el7.x86_64.rpm-bundle.tar">https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.22-1.el7.x86_64.rpm-bundle.tar</a></p>
-<p>2005年发布了 一个里程碑版本，即 MySQL 5.0 。在5.0中加入了游标、存储过程、触发器、视图和事务的支持。</p>
-<p>2008年被Sun公司以10亿美金收购，2009年Oracle收购了Sun公司。</p>
-<p>2010年MySQL5.5发布，InnoDB存储引擎变为MySQL的默认存储引擎。</p>
-<p>2015年MySQL5.7GA发布，是到目前为止最新的稳定版本分支。</p>
-<p><strong>分支：</strong></p>
-<p><strong>Percona Server</strong>，它基于<strong>InnoDB存储引擎</strong>的基础上提升了性能和易管理性，最后形成了增强版的<strong>XtraDB</strong>引擎。</p>
-<p><strong>MariaDB</strong>，MySQL有<strong>闭源</strong>的潜在风险，因此社区采用分支的方式来避开这个风险，用的是<strong>XtraDB</strong>引擎。</p>
-<h3 id="一条查询语句在数据库的处理过程"><a href="#一条查询语句在数据库的处理过程" class="headerlink" title="一条查询语句在数据库的处理过程"></a>一条查询语句在数据库的处理过程</h3><img src="C:\Users\LTH\AppData\Roaming\Typora\typora-user-images\image-20220315131208569.png" alt="image-20220315131208569" style="zoom:67%;" /> 
-
-<h3 id="MySQL逻辑架构"><a href="#MySQL逻辑架构" class="headerlink" title="MySQL逻辑架构"></a>MySQL逻辑架构</h3><p>MySQL逻辑架构整体分为3层： </p>
-<ol>
-<li>第一层是<strong>客户端层</strong>（JDBC数据库连接池那些东西）</li>
-<li>第二层是<strong>SQL层</strong></li>
-<li>第三层是<strong>存储引擎层</strong></li>
-</ol>
-<img src="C:\Users\LTH\AppData\Roaming\Typora\typora-user-images\image-20220315131414401.png" alt="image-20220315131414401" style="zoom:50%;" /> 
-
-<ol>
-<li><p><strong>SQL层是MySQL的核心部分，通常也叫作核心服务层。</strong></p>
-<p><strong>管理服务和工具组件</strong>：系统管理和控制工具从备份和恢复的安全性、复制、集群、管理、配置、迁移和元数据等方面管理数据库。</p>
-<p><strong>SQL接口组件</strong>：进行DML、DDL，存储过程、视图、触发器等操作和管理；用户SQL命令接口。</p>
-<p><strong>查询分析器组件</strong>：解析和验证SQL命令。</p>
-<p><strong>查询优化器组件</strong>：对SQL语句查询进行优化。</p>
-<p><strong>缓存和缓冲区</strong>：这个缓存机制是由一系列小缓存组成的。比如表缓存，记录缓存，key缓存，权限缓存等。</p>
-</li>
-<li><p><strong>存储引擎层</strong>：</p>
-<p>MySQL的存储引擎是插件式的。</p>
-</li>
-</ol>
-<h2 id="第二章：存储引擎与应用特性"><a href="#第二章：存储引擎与应用特性" class="headerlink" title="第二章：存储引擎与应用特性"></a>第二章：存储引擎与应用特性</h2><h3 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h3><p>MySQL存储引擎实际上是个抽象类，文件访问层的一个抽象接口来定制种文件访问机制，这种访问机制就称为存储引擎，MySQL区别于其他数据库的最重要的特点，就是其插件式的存储引擎接口模块，<strong>可插拔存储引擎</strong>。</p>
-<p>存储引擎可以分为MySQL官方存储引擎和第三方存储引擎。</p>
-<p>MySQL官方最主流的存储引擎包括以下几种：</p>
-<ol>
-<li><strong>MyISAM</strong>存储引擎</li>
-<li><strong>InnoDB</strong>存储引擎</li>
-<li>Memory存储引擎</li>
-<li>NDB存储引擎</li>
-<li>Archive存储引擎</li>
-</ol>
-<h4 id="MyISAM存储引擎（面向OLAP类数据库应用）"><a href="#MyISAM存储引擎（面向OLAP类数据库应用）" class="headerlink" title="MyISAM存储引擎（面向OLAP类数据库应用）"></a>MyISAM存储引擎（面向OLAP类数据库应用）</h4><ol>
-<li>存储限制：256TB</li>
-<li><strong>不支持事务</strong>，不支持MVCC（多版本并发控制）</li>
-<li>锁粒度：<strong>表级</strong></li>
-<li>支持索引类型：B树索引，全文索引</li>
-<li>复制支持，<strong>外键不支持</strong>，查询缓存支持</li>
-<li><strong>访问速度快</strong>，有较好的索引优化和数据压缩技术</li>
-</ol>
-<p>MyISAM存储引擎表由MYD和MYI组成，<strong>MYD用来存放数据文件， MYI用来存放索引文件</strong>。</p>
-<p>MySQL 5.0之前， MyISAM默认支持的表大小为4GB，MySQL 5.0之后，<strong>支持256TB的单表数据</strong>。</p>
-<p>MyISAM缓冲池<strong>只缓存索引文件</strong>，而不缓冲数据文件。</p>
-<h4 id="InnoDB存储引擎（面向OLTP类数据库应用）"><a href="#InnoDB存储引擎（面向OLTP类数据库应用）" class="headerlink" title="InnoDB存储引擎（面向OLTP类数据库应用）"></a>InnoDB存储引擎（面向OLTP类数据库应用）</h4><ol>
-<li><strong>支持事务</strong>，支持MVCC（多版本并发控制）</li>
-<li>锁粒度：<strong>行级</strong></li>
-<li>支持索引类型：B树索引，<strong>自适应哈希索引</strong>、全文索引</li>
-<li>复制支持，<strong>外键支持</strong>，查询缓存支持</li>
-</ol>
-<h4 id="MyISAM和InnoDB的区别："><a href="#MyISAM和InnoDB的区别：" class="headerlink" title="MyISAM和InnoDB的区别："></a>MyISAM和InnoDB的区别：</h4><p>MyISAM 保存有表的总行数，InnoDB 没有保存表的总行数。</p>
-<p>MyISAM查询速度比InnoDB快很多。</p>
-<h4 id="NDB存储引擎"><a href="#NDB存储引擎" class="headerlink" title="NDB存储引擎"></a>NDB存储引擎</h4><p>NDB存储引擎是一个<strong>集群存储引擎</strong>。</p>
-<p>NDB的特点是<strong>数据全部放在内存中</strong>，因此<strong>主键查找的速度极快</strong>，是<strong>高可用、高性能</strong>的<strong>集群系统</strong>。</p>
-<p>但是它的表的连接操作是在MySQL数据库层完成的，不是在存储引擎层完成的。这意味着复杂的连接操作需要巨大的网络开销，因此<strong>复杂查询速度会很慢</strong>，<strong>NDB存储引擎不支持事务</strong>。</p>
-<h4 id="Memory存储引擎"><a href="#Memory存储引擎" class="headerlink" title="Memory存储引擎"></a>Memory存储引擎</h4><p>Memory存储引擎将表中的<strong>数据存放在内存中</strong>，如果数据库重启或发生崩溃，表中的数据都将消失。</p>
-<p>适合用于存储临时数据的临时表。</p>
-<p>虽然Memory存储引擎<strong>速度非常快</strong>，但在使用上还是有一定的限制。比如<strong>只支持表锁</strong>，<strong>并发性能较差</strong>，<strong>不支持事务</strong>等。Memory存储引擎<strong>默认使用哈希索引</strong>，而不是B+树索引。</p>
-<h4 id="Archive存储引擎"><a href="#Archive存储引擎" class="headerlink" title="Archive存储引擎"></a>Archive存储引擎</h4><p>Archive存储引擎<strong>只支持INSERT和SELECT操作</strong>。使用zlib算法<strong>将数据行进行压缩后存储</strong>，压缩比一般可达1∶10。</p>
-<p>Archive存储引擎非常适合存储归档数据，如日志信息。</p>
-<p>Archive存储引擎<strong>是事务不安全</strong>的，其设计目标主要是<strong>提供高速的插入和压缩功能</strong>。</p>
-<h3 id="引擎修改"><a href="#引擎修改" class="headerlink" title="引擎修改"></a>引擎修改</h3><p>转换表的存储引擎，<strong>会失去和原存储引擎相关的所有特性</strong>。例如，如果将一张InnoDB表转换为MyISAM，然后再转回InnoDB，原InnoDB表上的所有外键将消失。</p>
-<h3 id="Innodb存储引擎体系结构"><a href="#Innodb存储引擎体系结构" class="headerlink" title="Innodb存储引擎体系结构"></a>Innodb存储引擎体系结构</h3><ol>
-<li>缓冲池</li>
-<li>change buffer</li>
-<li>自适应哈希索引</li>
-<li>redo log buffer</li>
-<li>double write</li>
-</ol>
-<p>MySQL是通过WAL方式，来保证数据库事务的一致性和持久性。具体而言就是: </p>
-<ol>
-<li>修改记录前，一定要<strong>先写日志</strong>；</li>
-<li>事务提交过程中，一定要<strong>保证日志先落盘</strong>，才能算事务提交完成。</li>
-</ol>
-<h4 id="InnoDB的缓冲池"><a href="#InnoDB的缓冲池" class="headerlink" title="InnoDB的缓冲池"></a>InnoDB的缓冲池</h4><p>InnoDB引擎使用<strong>缓冲池技术</strong>来提高数据库的整体性能（速度）。</p>
-<p>InnoDB存储引擎有各种缓冲池, 这些缓冲块组成了个大的InnoDB储引擎内存池，<strong>主要负责的工作</strong>是</p>
-<ol>
-<li>维护所有进程／线程需要访问的多个内部数据结构；</li>
-<li>缓存磁盘上的数据，<strong>方便快速读取</strong>，同时在对磁盘文件修改之前进行缓存；</li>
-<li>重做日志缓存等。</li>
-</ol>
-<p>Innodb引擎中<strong>磁盘和内存</strong>之间数据交互的<strong>基本单位是数据页</strong>，<strong>默认大小是16KB</strong>。</p>
-<p>Innodb引擎为<strong>每一个缓存页都创建了一个对应的块结构</strong>，块结构中存有该页面的表空间编号、页号等信息。</p>
-<p>数据页通过<strong>LRU最近最少使用算法</strong>来进行换进换出操作。</p>
-<p><strong>Buffer Pool的相关参数</strong></p>
-<ol>
-<li><strong>innodb_buffer_pool_size</strong> : Buffer Pool的总大小</li>
-<li><strong>innodb_buffer_pool_instances</strong> : Buffer Pool中instance的数量，为了减轻高并发下锁争抢的压力，Buffer Pool分为多个instances。</li>
-<li><strong>innodb_buffer_pool_chunk_size</strong> : chunk的大小，默认为128M，Mysql5.7版本后，Innodb引擎引入了chunk结构。Buffer Pool（扩大时）向操作系统申请一块连续的内存空间是chunk为单位向操作系统申请空间，chunk中存放缓存页的控制块和缓存页，还有管理这些缓存页的链表信息等。</li>
-<li><strong>innodb_buffer_pool_dump_at_shutdown&#x3D;ON</strong>表示在关闭MySQL时会把内存中的热数据保存在磁盘里ib_buffer_pool文件中。</li>
-<li><strong>innodb_buffer_pool_load_at_startup&#x3D;ON</strong>表示在启动时会自动加载热数据到Buffer_Pool缓冲池里。这样，始终保待热数据在内存中。</li>
-</ol>
-<h4 id="InnoDB的change-buffer"><a href="#InnoDB的change-buffer" class="headerlink" title="InnoDB的change buffer"></a>InnoDB的change buffer</h4><p>二级索引通常是非唯一的，插入顺序很随机，更新删除也都不是在邻近的位置，change buffer<strong>避免了很多随机I&#x2F;O的产生</strong>，将多次操作尽量变为少量的I&#x2F;O操作。</p>
-<p>change buffer的相关参数：</p>
-<ol>
-<li><strong>innodb_change_buffering</strong>：缓存所对应的操作。</li>
-<li><strong>innodb_change_buffer_max_size</strong>：用于配置 change buffer在Buffer Pool中所占的最大百分比。</li>
-</ol>
-<h4 id="InnoDB的自适应哈希索引"><a href="#InnoDB的自适应哈希索引" class="headerlink" title="InnoDB的自适应哈希索引"></a>InnoDB的自适应哈希索引</h4><p>lnnoDB存储引擎会监控对表上二级索引的查找。如果发现某二级索引被频繁访问，<strong>二级索引就成为热数据</strong>；如果建立哈希索引可以带来速度的提升，则建立哈希索引，所以称之为自适应的，即自适应哈希索引。MySQL自动管理，人为无法干预。</p>
-<p>自适应哈希索引通过缓冲池的B+Tree构造而来</p>
-<p>自适应哈希索引会占用 lnnoDB Buffer Pool。</p>
-<p>通过”set global innodb_adaptive_hash_index off&#x2F;on” 命令来关闭或打开该功能。</p>
-<h4 id="InnoDB的redo-log-buffer"><a href="#InnoDB的redo-log-buffer" class="headerlink" title="InnoDB的redo log buffer"></a>InnoDB的redo log buffer</h4><p>redo log buffer存放将要写入redo log文件的数据。其大小是通过设置。</p>
-<p>参数：</p>
-<ol>
-<li>innodb_flush_log_at_trx_commit，控制redo log flush的频率 (0，1，2，安全性由低到高，性能由高到低) </li>
-<li>innodb_log_buffer_size，设置redo log buffer的大小。</li>
-</ol>
-<h4 id="InnoDB的double-write"><a href="#InnoDB的double-write" class="headerlink" title="InnoDB的double write"></a>InnoDB的double write</h4><p>double write技术的引入是为了<strong>提高数据写入的可靠性</strong>。相对于随机写操作来说，顺序写入的代价较小。<strong>缺点</strong>是在新型的SSD存储中重复写入对SSD寿命有较大影响。</p>
-<p>参数：</p>
-<ol>
-<li><strong>innodb_doublewrite&#x3D;0</strong>：关掉double write功能</li>
-</ol>
-<h3 id="事务提交"><a href="#事务提交" class="headerlink" title="事务提交"></a>事务提交</h3><h4 id="事务提交过程"><a href="#事务提交过程" class="headerlink" title="事务提交过程"></a>事务提交过程</h4><p><strong>存储引擎实现事务</strong>的通用方式是基于 redo log 和 undo log。redo log 记录<strong>事务修改后的数据</strong>, undo log 记录<strong>事务前的原始数据</strong>。</p>
-<p>事务执行时实际发生过程</p>
-<ol>
-<li>先记录 undo&#x2F;redo log，<strong>确保日志刷到磁盘上持久存储</strong>。</li>
-<li><strong>更新</strong>数据记录，缓存操作并异步刷盘。</li>
-<li><strong>提交事务</strong>，在 redo log 中写入 commit 记录。</li>
-</ol>
-<p>binlog 不在事务存储引擎范围内，所以在提交事务前需要将事务日志持久化到 binlog（更新后，提交前）。</p>
-<h4 id="事务提交完后"><a href="#事务提交完后" class="headerlink" title="事务提交完后"></a>事务提交完后</h4><p>1、事务提交完后会<strong>purge undo段</strong>，purge的主要职能是，真正删除物理记录。（在执行delete或update操作时，实际<strong>旧记录没有真正删除</strong>（类似于is_deleted），只是在记录上打了一个标记，而是在事务提交后，purge线程真正删除）</p>
-<p>2、<strong>释放锁资源</strong></p>
-<p>3、刷redo日志。通过redo日志落盘操作，<strong>保证数据库的完整性和一致性</strong>；</p>
-<p>4、<strong>清理保存点列表</strong>，每个语句实际都会有一个保存点，用来回滚的。</p>
-<h3 id="InnoDB后台线程"><a href="#InnoDB后台线程" class="headerlink" title="InnoDB后台线程"></a>InnoDB后台线程</h3><p>InnoDB后台线程的主要作用是负责<strong>刷新内存池中的数据</strong>，保证缓冲池中的内存缓存的是最新数据。</p>
-<h4 id="InnoDB主线程"><a href="#InnoDB主线程" class="headerlink" title="InnoDB主线程"></a>InnoDB主线程</h4><p><strong>master thread：</strong>主要工作是将缓冲池中的<strong>数据异步刷新到磁盘，保证数据的一致性</strong>，包括脏页的刷新、合并插入缓冲等。</p>
-<p>master thread的线程优先级别最高，其内部由几个<strong>循环组成</strong>。master thread会根据数据运行的状态几个循环之间进行切换。</p>
-<ol>
-<li><strong>后台循环</strong><ol>
-<li>删除无用Undo页（总是）</li>
-<li>合并一定数量插入缓冲（总是）</li>
-<li>若有用户活动，跳回主循环，否则，跳入刷新循环（总是）</li>
-</ol>
-</li>
-<li><strong>刷新循环</strong><ol>
-<li>将一定数量的脏页刷回磁盘（总是）</li>
-<li>跳入暂停循环（总是）</li>
-</ol>
-</li>
-<li><strong>暂停循环</strong><ol>
-<li>将Master Thread挂起</li>
-<li>若有事件发生，跳入主循环（总是）</li>
-</ol>
-</li>
-</ol>
-<h4 id="InnoDB后台I-x2F-O线程"><a href="#InnoDB后台I-x2F-O线程" class="headerlink" title="InnoDB后台I&#x2F;O线程"></a>InnoDB后台I&#x2F;O线程</h4><p>InnoDB存储引擎中大量使用AIO <strong>异步I&#x2F;O</strong>来处理I&#x2F;O请求，可以极大地<strong>提高数据库的性能</strong>。</p>
-<p><strong>read thread</strong>负责将数据从磁盘加载到Buffer Pool的Page页。</p>
-<p><strong>write thread</strong>负责将Buffer Pool的dirty page刷新到磁盘。</p>
-<p><strong>log thread</strong>负责将Log Buffer内容刷新到磁盘。</p>
-<p><strong>insert buffer thread</strong>负责将Change Buffer内容刷新到磁盘。</p>
-<p>参数：可以在配置文件 my.cnf 中设置</p>
-<ol>
-<li>innodb_read_io_threads</li>
-<li>Innodb_write_io_threads</li>
-</ol>
-<h4 id="InnoDB脏页刷新线程"><a href="#InnoDB脏页刷新线程" class="headerlink" title="InnoDB脏页刷新线程"></a>InnoDB脏页刷新线程</h4><p>MySQL5.6前，脏页清理工作由<strong>master线程</strong>处理。5.6之后是由<strong>page cleaner thread</strong>实现缓冲池刷脏页的工作。</p>
-<p>参数：</p>
-<ol>
-<li><strong>innodb_page_cleaners</strong>：设置脏页刷新线程数。（5.7.4版本后引入了多个page cleaner线程）</li>
-<li><strong>Innodb_buffer_pool_wait_free</strong>：标志脏页有没有成为系统的性能瓶颈。如果innodb_buffer_pool_size够大，就可以让Innodb_buffer_pool_wait_free的值很小，甚至为0。</li>
-</ol>
-<h4 id="InnoDB-purge线程"><a href="#InnoDB-purge线程" class="headerlink" title="InnoDB purge线程"></a>InnoDB purge线程</h4><p><strong>purge thread</strong>负责回收已经使用并分配的undo页（记录原始数据）。</p>
-<p>例外：</p>
-<ol>
-<li><strong>insert undo log</strong>是不需要purge的，因为insert操作只对本事务可见，所以提交事务后就直接删除了。</li>
-<li><strong>update undo log</strong>是delete update操作产生的，后续MVCC可能会用到，所以不能在提交时候删除。它会放入undo log的链表，等待purge<strong>最后删除</strong>。</li>
-</ol>
-<p>当删除和更新数据行时，对数据页中要删除的数据行做标记”deleted”，事务提交速度快；后台线程purge线程对数据页中有 “deleted” 标签的数据行进行真正的删除。</p>
-<p>参数：</p>
-<ol>
-<li><strong>innodb_purge_threads</strong>：可以调整并发的purge线程数。</li>
-</ol>
-<h2 id="第三章：事务和锁"><a href="#第三章：事务和锁" class="headerlink" title="第三章：事务和锁"></a>第三章：事务和锁</h2><h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p>事务是DBMS中操作的基本执行单位，事务本身就是构成单一逻辑工作单元的数据库操作的有限序列，由一组DML语句INSERT、DELETE、 UPDATE组成。</p>
-<p>在关系型数据库中，事务可以是一条、一组SQL语句，或整个程序。</p>
-<p><strong>事务和程序的区别</strong>：程序包含多个事务。</p>
-<p><strong>隐含事务</strong>与<strong>自动提交</strong>的SQL语句</p>
-<ol>
-<li><strong>DDL语句</strong>：ALTER, CREATE, RENAME, DROP, TRUNCATE </li>
-<li><strong>用户权限管理操作</strong>：CREATE USER, GRANT, REVOKE, SET PASSWORD</li>
-<li><strong>管理语句</strong>：ANALYZE TABLE, CHECK INDEX, REPAIR TABLE, LOAD INDEX INTO CACHE</li>
-</ol>
-<p><strong>命令：</strong></p>
-<ol>
-<li><strong>set autocommit&#x3D;0</strong>：关闭事务自动提交</li>
-<li><strong>begin</strong>：开始事务</li>
-<li><strong>commit</strong>：提交事务</li>
-<li><strong>rollback</strong>：回滚事务</li>
-<li><strong>start transaction</strong>：显示开启事务</li>
-</ol>
-<p>InnoDB存储引擎默认自动提交事务，隐式<strong>每行提交一次</strong>，<strong>效率极慢</strong>，<strong>当大量插入时发生错误无法回滚</strong>。</p>
-<p>↑针对该案例进行优化，<strong>显式启动事务并提交</strong>，把循环体放入事务内避免循环提交。</p>
-<img src="C:\Users\LTH\AppData\Roaming\Typora\typora-user-images\image-20220316001844535.png" alt="image-20220316001844535" style="zoom:50%;" />  
-
-<h3 id="事务的四大特性ACID"><a href="#事务的四大特性ACID" class="headerlink" title="事务的四大特性ACID"></a>事务的四大特性ACID</h3><ol>
-<li><strong>原子性</strong>（Atomicity）：事务中的操作，要么都做，要么都不做，是不可分割的。原子性是事务概念的本质体现和基本要求。</li>
-<li><strong>一致性</strong>（Consistency ）：事务执行的结果必须使数据库从一个一致性状态变到另一个一致性状态。</li>
-<li><strong>隔离性</strong>（Isolation）：并发执行的各事务不能互相干扰。</li>
-<li><strong>持续性</strong>（Durability）： 事务一旦提交，他对数据库的更新不再受后继操作或者故障的影响</li>
-</ol>
-<h3 id="事务的隔离级别"><a href="#事务的隔离级别" class="headerlink" title="事务的隔离级别"></a>事务的隔离级别</h3><h4 id="事务读写中存在的问题"><a href="#事务读写中存在的问题" class="headerlink" title="事务读写中存在的问题"></a>事务读写中存在的问题</h4><p>MySQL作为多线程并发访问的数据库，当多个用户（多个事务）同时访问相同的数据库资源，也就是并发环境下，可能会出现以下几种不确定的情况。</p>
-<ol>
-<li><strong>脏读</strong>：一个事务读取了某行数据，而另外一个事务已经更新了此行的数据，但没有及时提交，<strong>例如，事务A读取了事务B更新的数据，随后事务B因为某些原因进行了回滚操作，那么事务A读取到的数据就是脏数据。</strong>这种情况是非常危险的，很可能造成所有的操作都被回滚。</li>
-<li><strong>不可重复读</strong>：不可重复读指一个事务的修改和提交造成另一个事务在同一范围内的两次相同查询的返回结果不同。<strong>例如，事务A需要多次读取同一个数据，在事务A还没有结束时，事务B 访问并修改了该数据，那么，事务A两次读取到的数据就可能不一致</strong>，因此称为不可重复读。</li>
-<li><strong>幻读</strong>：幻读是指一个线程中的事务读取到了另外一个线程中提交的INSERT数据。<strong>例如，用户A将数据库中所有学生的成绩从具体分数改为ABCDE等级，但是用户B此时插入了一条具体分数的记录，用户A修改完成后发现还有一条记录没有改过来</strong>，这种情况为幻读或者虚读。</li>
-</ol>
-<h4 id="MySQL中的事务隔离级别"><a href="#MySQL中的事务隔离级别" class="headerlink" title="MySQL中的事务隔离级别"></a>MySQL中的事务隔离级别</h4><table>
-<thead>
-<tr>
-<th align="center">特性</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">ReadUncommitted 读未提交</td>
-<td align="center">允许事务读取其他事务未提交的结果（即允许脏读），是事务隔离级别中等级最低的，也是最危险的，该级别<strong>很少用于实际应用</strong>。</td>
-</tr>
-<tr>
-<td align="center">Read Committed      读已提交</td>
-<td align="center">允许事务只能读取其他事务<strong>已经提交</strong>的结果，该隔离级别<strong>可以避免脏读</strong>，但<strong>不能避免重复读和幻读</strong>的情况。</td>
-</tr>
-<tr>
-<td align="center">Repeatable Read               可重复读（默认）</td>
-<td align="center">该级别确保了同一事务的多个实例在并发读取数据时，可以读取到同样的数据行。这种级别可以<strong>避免脏读和不可重复读</strong>的问题，但<strong>不能避免幻读</strong>的问题，是 MySQL <strong>默认的隔离级别</strong>。</td>
-</tr>
-<tr>
-<td align="center">Serializable           可串行化</td>
-<td align="center">强制性的对事务进行排序，使之不可能相互冲突，从而解决幻读的问题。实际上，这种方式是在每个读的数据行上<strong>加了共享锁</strong>，但这种级别可能<strong>会导致大量的超时现象</strong>和<strong>锁竞争</strong>，所以<strong>很少用于实际应用</strong>，是事务中最高的隔离级别</td>
-</tr>
-</tbody></table>
-<p><img src="C:\Users\LTH\AppData\Roaming\Typora\typora-user-images\image-20220316134121424.png" alt="image-20220316134121424"> </p>
-<p>命令：</p>
-<ol>
-<li>SELECT @@tx_isolation; 查看当前会话的隔离级别（5.7）</li>
-<li>SELECT @@transaction_isolation; 查看当前会话的隔离级别（8.0）</li>
-<li>SET SESSION TRANSACTION ISOLATION LEVEL {READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE}：修改当前会话的隔离级别。</li>
-</ol>
-<h3 id="锁机制"><a href="#锁机制" class="headerlink" title="锁机制"></a>锁机制</h3><p>锁机制主要是为了使用户<strong>对数据的访问变得有序</strong>，<strong>保证数据的一致性</strong>。锁机制是实现宏观上高并发最简单的方式，但从微观的角度来说，锁机制其实是<strong>读写串行化</strong>。</p>
-<h4 id="锁的粒度"><a href="#锁的粒度" class="headerlink" title="锁的粒度"></a>锁的粒度</h4><p>锁的粒度是指<strong>锁的作用范围</strong>。InnoDB存储引擎支持表级锁以及行级锁，MyISAM存储引擎支持表级锁。</p>
-<h4 id="隐式锁与显式锁"><a href="#隐式锁与显式锁" class="headerlink" title="隐式锁与显式锁"></a>隐式锁与显式锁</h4><p>MySQL自动加锁被称为隐式锁，数据库开发人员手动加锁被称为显式锁。</p>
-<h4 id="MySQL的读写锁"><a href="#MySQL的读写锁" class="headerlink" title="MySQL的读写锁"></a>MySQL的读写锁</h4><p>读锁：读锁也被称为<strong>共享锁</strong>，允许其他用户对数据同时“读”，但不允许其他用户对数据同时“写”</p>
-<p>写锁：写锁也被称为<strong>排他锁</strong>或者独占锁。写锁既不允许其他用户对数据同时“读”，也不允许其他用对数据同时“写”</p>
-<h4 id="InnoDB的锁类型"><a href="#InnoDB的锁类型" class="headerlink" title="InnoDB的锁类型"></a>InnoDB的锁类型</h4><p><strong>表级锁</strong>：表级锁指<strong>整个表被客户锁定</strong>。表级锁分为<strong>读锁</strong>和<strong>写锁</strong>与<strong>意向锁</strong>。</p>
-<ol>
-<li>命令：LOCK TABLES table_name[AS alias]{READ [LOCAL]|[LOS_PRIORITY]WRITE}</li>
-<li>READ：读锁定，确保用户<strong>可以读取表</strong>，但是<strong>不能修改表</strong>。</li>
-<li>WRITE：写锁定，<strong>只有锁定该表的用户可以修改表</strong>，其他用户只能<strong>读取表</strong>。</li>
-<li>意向锁：锁定的粒度是整张表。意向锁指如果对一个结点加意向锁，则说明该结点的下层结点正在被加锁。意向锁分为<strong>意向共享锁（IS）</strong>和<strong>意向排他锁（IX）</strong>两类。是<strong>MySQL自动的向该表加的锁</strong>。主要<strong>作用在于提高系统性能</strong>，不然第二个事务想加锁时每次要看表是否有被锁住，然后还要看行是否有被锁住，十分消耗性能。</li>
-</ol>
-<p><strong>行级锁</strong>：只有线程使用的<strong>行是被锁定的</strong>。表中的其他行对于其他线程都是可用的。行级锁分为<strong>读锁</strong>和<strong>写锁</strong>。</p>
-<ol>
-<li>READ：读锁定，确保用户<strong>可以读取表</strong>，但是<strong>不能修改表</strong>。</li>
-<li>WRITE：写锁定，<strong>只有锁定该表的用户可以修改表</strong>，其他用户只能<strong>读取表</strong>。</li>
-</ol>
-<p><img src="C:\Users\LTH\AppData\Roaming\Typora\typora-user-images\image-20220316201815350.png" alt="image-20220316201815350"> </p>
-<p><strong>间隙锁：</strong>间隙锁（ Gap Lock）是 InnoDB 引擎在可重复读的隔离级别下<strong>为了解决幻读和数据误删问题</strong>而引入的锁机制。select * from test where id &gt; 0 and id &lt; 5 for update;时，如果表中不存在 id 为 2 的数据(只有1,3,4)，这个id&#x3D;2的数据被称为“间隙”， InnoDB引擎也会对这些“间隙”加锁。此时，如果事务T2执行 INSERT 语句，插入一条 id 为 2 的数据，则需要等到事务 T1结束才可以插入成功。</p>
-<h4 id="锁命令"><a href="#锁命令" class="headerlink" title="锁命令"></a>锁命令</h4><p><strong>设置共享锁</strong>：SELECT * FROM 表名 WHERE 条件 LOCK IN SHARE MODE;</p>
-<p><strong>设置排他锁</strong>：SELECT * FROM 表名 WHERE 条件 FOR UPDATE; （InnoDB引擎会自动在默认的修改语句update、delete、insert加上排他锁）</p>
-<h4 id="锁等待"><a href="#锁等待" class="headerlink" title="锁等待"></a>锁等待</h4><p>锁等待是指在一个事务执行过程中，一个锁需要<strong>等到上一个事务的锁释放</strong>后才可以使用该资源。</p>
-<p>参数：</p>
-<ol>
-<li><strong>innodb_lock_wait_timout</strong> ：锁等待时间参数</li>
-<li><strong>select * from sys.innodb_lock_waits\G</strong>：查看锁等待发生情况</li>
-<li><strong>show full processlist</strong>：输出线程id号</li>
-</ol>
-<h4 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h4><p>在MySQL的InnoDB存储引擎中，当检测到死锁时，<strong>通常会使一个持有最少行级排它锁的事务释放锁并回滚，而让另一个事务获得锁并继续完成事务。</strong></p>
-<h4 id="监控事务和锁"><a href="#监控事务和锁" class="headerlink" title="监控事务和锁"></a>监控事务和锁</h4><p>查看和监控事务、锁信息，可以通过执行<strong>show engine innodb status</strong> 命令。</p>
-<p>MySQL将事务和锁信息记录在了<strong>information_schema</strong>数据库中，我们只需要查询即可。涉及的表主要有3个，即innodb_trx（查看事务情况）、innodb_locks（查询锁情况）、innodb_lock_waits（查看锁阻塞情况）。</p>
-<p>MySQL5.6以上版本，可以设置innodb_print_all_deadlocks参数为1来记录死锁信息，并放到错误日志里。</p>
-<h4 id="避免死锁的方法"><a href="#避免死锁的方法" class="headerlink" title="避免死锁的方法"></a>避免死锁的方法</h4><p><strong>避免死锁的方法</strong></p>
-<p>(I) 不同程序并发存取多个表或者涉及多行记录时，尽量<strong>约定以相同的顺序访问表</strong>， 可以大大降低死锁的机会。</p>
-<p>(2) 对应用程序进行调整，在某些情况下，通过<strong>把大事务分解成多个小事务</strong>，使得<strong>锁能够更快被释放</strong>，及时提交或者回滚事务，可减少死锁发生的概率。</p>
-<p>(3) 在同一个事务中，尽可能做到<strong>一次锁定所需要的所有资源</strong>，减少死锁产生的概率。</p>
-<p>(4) 为表<strong>添加合理的索引</strong>，不用索引将会为表的每一行记录加上锁，死锁的概率大大增大。</p>
-<p>(5) 对非常容易产生死锁的业务，可尝试<strong>升级锁粒度</strong>，通过表锁定来减少死锁产生的概率。</p>
-<h2 id="第四章：索引"><a href="#第四章：索引" class="headerlink" title="第四章：索引"></a>第四章：索引</h2><h3 id="索引的原理"><a href="#索引的原理" class="headerlink" title="索引的原理"></a>索引的原理</h3><p>索引提供指针以指向存储在表中指定列的数据值，然后根据指定的排序次序排列这些指针。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/" data-id="cl2y4ls1e00079c7j7uwrdce4" data-title="数据库优化复习笔记" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93-MySQL/" rel="tag">数据库, MySQL</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-MySQL 8.0主从同步" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/09/MySQL%208.0%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/" class="article-date">
-  <time class="dt-published" datetime="2022-05-09T02:45:28.000Z" itemprop="datePublished">2022-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/09/MySQL%208.0%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/">MySQL主从同步</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="MySQL主从同步"><a href="#MySQL主从同步" class="headerlink" title="MySQL主从同步"></a>MySQL主从同步</h2><h3 id="我的配置：MySQL-8-0，Centos-7（主机），Windows-10（从机）"><a href="#我的配置：MySQL-8-0，Centos-7（主机），Windows-10（从机）" class="headerlink" title="我的配置：MySQL 8.0，Centos 7（主机），Windows 10（从机）"></a>我的配置：MySQL 8.0，Centos 7（主机），Windows 10（从机）</h3><h3 id="第一步：查看binlog是否开启"><a href="#第一步：查看binlog是否开启" class="headerlink" title="第一步：查看binlog是否开启"></a>第一步：查看binlog是否开启</h3><p>MySQL8.0开始，默认开启binlog，如果是5.7的版本，也可以在my.cnf&#x2F;my.ini中进行配置开启。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> variables <span class="keyword">like</span> <span class="string">&#x27;%log_bin%&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="主机"><a href="#主机" class="headerlink" title="主机"></a>主机</h4><p><img src="https://img-blog.csdnimg.cn/fb7bb2c988cd4cfdb2c8b6423257992b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qGD6IqxZXI=,size_19,color_FFFFFF,t_70,g_se,x_16"></p>
-<h4 id="从机"><a href="#从机" class="headerlink" title="从机"></a>从机</h4><p><img src="https://img-blog.csdnimg.cn/ed46a0b2d9b948658ff779236c25adcb.png" alt="在这里插入图片描述"></p>
-<h3 id="第二步：设置配置文件"><a href="#第二步：设置配置文件" class="headerlink" title="第二步：设置配置文件"></a>第二步：设置配置文件</h3><h4 id="主机-1"><a href="#主机-1" class="headerlink" title="主机"></a>主机</h4><p>Linux下的MySQL的配置文件默认在&#x2F;etc&#x2F;my.cnf，使用vim命令进行编辑</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/my.cnf</span><br></pre></td></tr></table></figure>
-
-<p>在[mysqld]下配置信息，注意是[mysqld]下，如果配置到其他地方会导致读取不到。</p>
-<p><img src="https://img-blog.csdnimg.cn/e6336420d100498a82e1880522c78b27.png" alt=" "></p>
-<p>这里的binlog-do-db可以不配置，根据需求来。</p>
-<h4 id="从机-1"><a href="#从机-1" class="headerlink" title="从机"></a>从机</h4><p>Windows下的MySQL配置文件默认在C:\Program Files\MySQL下，打开my.ini进行编辑</p>
-<p>同样，在[mysqld]下配置信息</p>
-<p><img src="https://img-blog.csdnimg.cn/f3672a7f87c44764a78de7dba128dbf5.png" alt="在这里插入图片描述"></p>
-<h3 id="第三步：重启服务"><a href="#第三步：重启服务" class="headerlink" title="第三步：重启服务"></a>第三步：重启服务</h3><h4 id="主机-2"><a href="#主机-2" class="headerlink" title="主机"></a>主机</h4><p>Linux下MySQL重启命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld.service</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/b710c2a6392340c4acb1171d7ac32d51.png" alt="在这里插入图片描述"></p>
-<h4 id="从机-2"><a href="#从机-2" class="headerlink" title="从机"></a>从机</h4><p>打开cmd先输入net stop mysql，然后再输入net start mysql</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net stop mysql</span><br><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/dfbcd6d95d7341c39c942c54ea08f38b.png" alt="在这里插入图片描述"></p>
-<h3 id="第四步：设置账号"><a href="#第四步：设置账号" class="headerlink" title="第四步：设置账号"></a>第四步：设置账号</h3><h4 id="主机-3"><a href="#主机-3" class="headerlink" title="主机"></a>主机</h4><p>通常，主从同步业务场景，是给予从库一个账号，正常是不会给予root账号的，这里我先使用我之前创建的账号zhku进行演示（你也可以使用root账号，但不建议）。</p>
-<p>先查看该账户是否具有主从同步的权限</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> Repl_slave_priv, Repl_client_priv <span class="keyword">from</span> mysql.user <span class="keyword">where</span> <span class="keyword">user</span> <span class="operator">=</span> <span class="string">&#x27;zhku&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/1aaea14311e34643aaf21d85604acbff.png" alt="在这里插入图片描述"></p>
-<p>显示没有赋予该权限</p>
-<p>赋予权限</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> replication slave, replication client <span class="keyword">on</span> <span class="operator">*</span>.<span class="operator">*</span> <span class="keyword">to</span> <span class="string">&#x27;zhku&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="第五步：查看状态"><a href="#第五步：查看状态" class="headerlink" title="第五步：查看状态"></a>第五步：查看状态</h3><h4 id="主机-4"><a href="#主机-4" class="headerlink" title="主机"></a>主机</h4><h5 id="查看master状态"><a href="#查看master状态" class="headerlink" title="查看master状态"></a>查看master状态</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> master status;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/52956461efe4460ba24d366a683f2547.png" alt="在这里插入图片描述"></p>
-<p>file：表示同步的bin-log信息从哪个文件开始；</p>
-<p>position：表示从file的哪个位置开始；</p>
-<p>binlog_do_db：表示同步哪一个库(如果在配置文件中没有设置，则是空)</p>
-<h4 id="从机-3"><a href="#从机-3" class="headerlink" title="从机"></a>从机</h4><h5 id="在从机上设置主服务器IP地址"><a href="#在从机上设置主服务器IP地址" class="headerlink" title="在从机上设置主服务器IP地址"></a>在从机上设置主服务器IP地址</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">change master <span class="keyword">to</span> master_host<span class="operator">=</span><span class="string">&#x27;120.***.***.110&#x27;</span>,master_port<span class="operator">=</span><span class="number">3306</span>,master_user<span class="operator">=</span><span class="string">&#x27;zhku&#x27;</span>,master_password<span class="operator">=</span><span class="string">&#x27;123456&#x27;</span>,master_log_file<span class="operator">=</span><span class="string">&#x27;mysql-bin.000001&#x27;</span>,master_log_pos<span class="operator">=</span><span class="number">156</span>;</span><br></pre></td></tr></table></figure>
-
-<p>这里设置master_host为主机的IP地址，master_user为登录用户，如zhku，设置master_password为密码，这里我的密码是123456，master_log_file为主机上查看master status的file，master_log_pos为主机上查看到的position。</p>
-<h5 id="开启slave"><a href="#开启slave" class="headerlink" title="开启slave"></a>开启slave</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">start</span> slave;</span><br></pre></td></tr></table></figure>
-
-<h5 id="查询slave状态"><a href="#查询slave状态" class="headerlink" title="查询slave状态"></a>查询slave状态</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> slave status;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/24b3cecfa3b74baa8460fdb7c2ca7a08.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qGD6IqxZXI=,size_15,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>结果太多，我这里以列显示好看一点。</p>
-<p>可以看到最关键的两个参数，倒数两个，Slave_IO_Running和Slave_SQL_Running，显示Yes则代表成功实现主从同步，第一个Slave_IO_State也显示正在等待主机发送事件信息。</p>
-<h4 id="到此为止就配置成功了！"><a href="#到此为止就配置成功了！" class="headerlink" title="到此为止就配置成功了！"></a>到此为止就配置成功了！</h4><h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><h4 id="第一个问题：在第三步重启服务时启动失败"><a href="#第一个问题：在第三步重启服务时启动失败" class="headerlink" title="第一个问题：在第三步重启服务时启动失败"></a>第一个问题：在第三步重启服务时启动失败</h4><p>原因是配置文件有问题，需要检查配置文件是否配置正确，如单词拼写，数据库是否存在等。</p>
-<h4 id="第二个问题：在第五步时从机查看slave-status时，Slave-IO-Running显示Connecting"><a href="#第二个问题：在第五步时从机查看slave-status时，Slave-IO-Running显示Connecting" class="headerlink" title="第二个问题：在第五步时从机查看slave status时，Slave_IO_Running显示Connecting"></a>第二个问题：在第五步时从机查看slave status时，Slave_IO_Running显示Connecting</h4><p><img src="https://img-blog.csdnimg.cn/42ec408a8aab455b8c7608b36d197999.png" alt="在这里插入图片描述"></p>
-<p>原因：可以继续查看后面的列，找到Last_IO_Error列</p>
-<p><img src="https://img-blog.csdnimg.cn/2a88ca0f134b4ff8b10bc62d626b22ce.png" alt="在这里插入图片描述"></p>
-<p>查看里面的报错显示的是Authentication plugin ‘caching_sha2_password’ reported error: Authentication requires secure connection.。</p>
-<p><img src="https://img-blog.csdnimg.cn/3de2bbb2f9894f3ea1827e41bd69f0dc.png" alt="在这里插入图片描述"></p>
-<p>前往主机查询</p>
-<p><img src="https://img-blog.csdnimg.cn/cf4fa2323eab4239916991ee2547c50c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qGD6IqxZXI=,size_18,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>发现zhku账号与root账号的plugin值不同，需要将zhku账号的plugin值修改为mysql_native_password（使用update语句，这里不再赘述），修改后即可成功显示两个YES。</p>
-<p>这里也有可能报错信息不是这个问题，该列显示connecting的问题主要有三个，一个是网络问题，一个是账号密码不对，一个是master_log_file和master_log_pos设置不对。网络问题的话可以检查防火墙是否开启，笔者这里使用的是阿里云服务器，服务器上打开了安全组，Centos上打开了防火墙端口，所以可以访问，如果是虚拟机则要看桥接模式等，这里不再赘述。</p>
-<p>Linux上打开，关闭，查看防火墙的博文链接：</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45930241/article/details/123219592">https://blog.csdn.net/weixin_45930241&#x2F;article&#x2F;details&#x2F;123219592</a></p>
-<h4 id="第三个问题：在第五步时从机查看slave-status时，Slave-IO-Running显示No"><a href="#第三个问题：在第五步时从机查看slave-status时，Slave-IO-Running显示No" class="headerlink" title="第三个问题：在第五步时从机查看slave status时，Slave_IO_Running显示No"></a>第三个问题：在第五步时从机查看slave status时，Slave_IO_Running显示No</h4><p><img src="https://img-blog.csdnimg.cn/c185f1273f9e441d9d94046f59b68fb0.png" alt="在这里插入图片描述"></p>
-<p>同第二个问题，查询后面的信息列，看看报错原因是什么</p>
-<p><img src="https://img-blog.csdnimg.cn/566e3b566d804eecb4c5059e91cc42ad.png" alt="在这里插入图片描述"></p>
-<p>发现显示文件名字不一致</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> master status;</span><br></pre></td></tr></table></figure>
-
-<p>在从机上使用show master status命令查看</p>
-<p><img src="https://img-blog.csdnimg.cn/e7b70bebadfa48cd83ec1b790eebd534.png" alt="在这里插入图片描述"></p>
-<p>在主机上使用show master status命令查看</p>
-<p><img src="https://img-blog.csdnimg.cn/5a700da7c9154344a86ebae7e07e4814.png" alt="在这里插入图片描述"></p>
-<p>比对发现，File和Position不一致。</p>
-<p>使用stop slave命令停掉从机的slave，回到第五步，重新使用change master命令设置，最后再start slave即可，如果还不行，就再去检查两个机器的配置文件是否修改正确。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stop slave;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/09/MySQL%208.0%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/" data-id="cl2y4ls0x00009c7j92w36xro" data-title="MySQL主从同步" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL-Linux-Windows-Slave/" rel="tag">MySQL, Linux, Windows, Slave</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-newpapername" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/08/newpapername/" class="article-date">
-  <time class="dt-published" datetime="2022-05-08T14:44:35.000Z" itemprop="datePublished">2022-05-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/08/newpapername/">newpapername</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>外币外币222</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/08/newpapername/" data-id="cl2y4ls1600039c7j14dw5zzy" data-title="newpapername" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/08/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-05-08T14:23:49.884Z" itemprop="datePublished">2022-05-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/08/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/08/hello-world/" data-id="cl2y4ls1200019c7jb0o9c26e" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL-Linux-Windows-Slave/" rel="tag">MySQL, Linux, Windows, Slave</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93-MySQL/" rel="tag">数据库, MySQL</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/MySQL-Linux-Windows-Slave/" style="font-size: 10px;">MySQL, Linux, Windows, Slave</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93-MySQL/" style="font-size: 10px;">数据库, MySQL</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/05/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/">数据库优化复习笔记</a>
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
         
-          <li>
-            <a href="/2022/05/09/MySQL%208.0%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/">MySQL主从同步</a>
-          </li>
         
-          <li>
-            <a href="/2022/05/08/newpapername/">newpapername</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/08/hello-world/">Hello World</a>
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
       </ul>
     </div>
   </div>
+</nav>
 
-  
-</aside>
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="An elegant Material-Design theme for Hexo">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/" target="_self">
+          数据库优化复习笔记
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/05/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/" target="_self">
+          
+          数据库优化复习笔记第一章：概述数据库的性能优化 计算机系统的优化（硬件均衡） SQL语句的优化（通过增加索引、设置参数让MySQL的执行计划更优） 架构的优化（最有效，读多写少可以设计为读写分离）  数据库发展阶段人工管理阶段 —&gt; 文件系统阶段 —&gt; 数据库发展阶段 数据库的分类关系型数据库    非关系型数据库          关系型 非关系型    优点 1、都是使用表结构易于
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-09 10:49" pubdate>
+              2022-05-09
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93-MySQL/">数据库, MySQL</a>
+            
+          </div>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 LTH<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
+    </article>
   </div>
-</footer>
 
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/09/MySQL%208.0%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/" target="_self">
+          MySQL主从同步
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/05/09/MySQL%208.0%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/" target="_self">
+          
+          MySQL主从同步我的配置：MySQL 8.0，Centos 7（主机），Windows 10（从机）第一步：查看binlog是否开启MySQL8.0开始，默认开启binlog，如果是5.7的版本，也可以在my.cnf&#x2F;my.ini中进行配置开启。 1show variables like &amp;#x27;%log_bin%&amp;#x27;;  主机 从机 第二步：设置配置文件主机Linux下的
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-09 10:45" pubdate>
+              2022-05-09
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/MySQL-Linux-Windows-Slave/">MySQL, Linux, Windows, Slave</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/08/newpapername/" target="_self">
+          newpapername
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/05/08/newpapername/" target="_self">
+          
+          外币外币222
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-08 22:44" pubdate>
+              2022-05-08
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/java/">java</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/05/08/hello-world/" target="_self">
+          Hello World
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2022/05/08/hello-world/" target="_self">
+          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-08 22:23" pubdate>
+              2022-05-08
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/js/jquery-3.4.1.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
 
 
 
 
-<script src="/js/script.js"></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
 
 
 
 
 
-  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
 </body>
 </html>
