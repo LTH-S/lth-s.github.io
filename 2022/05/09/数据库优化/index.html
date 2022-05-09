@@ -6,15 +6,25 @@
   
   <title>桃花er的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="桃花er的博客">
-<meta property="og:type" content="website">
+  <meta name="description" content="数据库优化复习笔记第一章：概述数据库的性能优化 计算机系统的优化（硬件均衡） SQL语句的优化（通过增加索引、设置参数让MySQL的执行计划更优） 架构的优化（最有效，读多写少可以设计为读写分离）  数据库发展阶段人工管理阶段 —&gt; 文件系统阶段 —&gt; 数据库发展阶段 数据库的分类关系型数据库    非关系型数据库          关系型 非关系型    优点 1、都是使用表结构易于">
+<meta property="og:type" content="article">
 <meta property="og:title" content="桃花er的博客">
-<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:url" content="http://example.com/2022/05/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/index.html">
 <meta property="og:site_name" content="桃花er的博客">
-<meta property="og:description" content="桃花er的博客">
+<meta property="og:description" content="数据库优化复习笔记第一章：概述数据库的性能优化 计算机系统的优化（硬件均衡） SQL语句的优化（通过增加索引、设置参数让MySQL的执行计划更优） 架构的优化（最有效，读多写少可以设计为读写分离）  数据库发展阶段人工管理阶段 —&gt; 文件系统阶段 —&gt; 数据库发展阶段 数据库的分类关系型数据库    非关系型数据库          关系型 非关系型    优点 1、都是使用表结构易于">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/LTH/AppData/Roaming/Typora/typora-user-images/image-20220315125516987.png">
+<meta property="og:image" content="c:/Users/LTH/AppData/Roaming/Typora/typora-user-images/image-20220315125535713.png">
+<meta property="og:image" content="c:/Users/LTH/AppData/Roaming/Typora/typora-user-images/image-20220315131208569.png">
+<meta property="og:image" content="c:/Users/LTH/AppData/Roaming/Typora/typora-user-images/image-20220315131414401.png">
+<meta property="og:image" content="c:/Users/LTH/AppData/Roaming/Typora/typora-user-images/image-20220316001844535.png">
+<meta property="og:image" content="c:/Users/LTH/AppData/Roaming/Typora/typora-user-images/image-20220316134121424.png">
+<meta property="og:image" content="c:/Users/LTH/AppData/Roaming/Typora/typora-user-images/image-20220316201815350.png">
+<meta property="article:published_time" content="2022-05-09T02:45:40.738Z">
+<meta property="article:modified_time" content="2022-03-27T07:19:35.471Z">
 <meta property="article:author" content="LTH">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/LTH/AppData/Roaming/Typora/typora-user-images/image-20220315125516987.png">
   
     <link rel="alternate" href="/atom.xml" title="桃花er的博客" type="application/atom+xml">
   
@@ -71,107 +81,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-MySQL 8.0主从同步" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/09/MySQL%208.0%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/" class="article-date">
-  <time class="dt-published" datetime="2022-05-09T02:46:16.449Z" itemprop="datePublished">2022-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="MySQL主从同步"><a href="#MySQL主从同步" class="headerlink" title="MySQL主从同步"></a>MySQL主从同步</h2><h3 id="我的配置：MySQL-8-0，Centos-7（主机），Windows-10（从机）"><a href="#我的配置：MySQL-8-0，Centos-7（主机），Windows-10（从机）" class="headerlink" title="我的配置：MySQL 8.0，Centos 7（主机），Windows 10（从机）"></a>我的配置：MySQL 8.0，Centos 7（主机），Windows 10（从机）</h3><h3 id="第一步：查看binlog是否开启"><a href="#第一步：查看binlog是否开启" class="headerlink" title="第一步：查看binlog是否开启"></a>第一步：查看binlog是否开启</h3><p>MySQL8.0开始，默认开启binlog，如果是5.7的版本，也可以在my.cnf&#x2F;my.ini中进行配置开启。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> variables <span class="keyword">like</span> <span class="string">&#x27;%log_bin%&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h4 id="主机"><a href="#主机" class="headerlink" title="主机"></a>主机</h4><p><img src="https://img-blog.csdnimg.cn/fb7bb2c988cd4cfdb2c8b6423257992b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qGD6IqxZXI=,size_19,color_FFFFFF,t_70,g_se,x_16"></p>
-<h4 id="从机"><a href="#从机" class="headerlink" title="从机"></a>从机</h4><p><img src="https://img-blog.csdnimg.cn/ed46a0b2d9b948658ff779236c25adcb.png" alt="在这里插入图片描述"></p>
-<h3 id="第二步：设置配置文件"><a href="#第二步：设置配置文件" class="headerlink" title="第二步：设置配置文件"></a>第二步：设置配置文件</h3><h4 id="主机-1"><a href="#主机-1" class="headerlink" title="主机"></a>主机</h4><p>Linux下的MySQL的配置文件默认在&#x2F;etc&#x2F;my.cnf，使用vim命令进行编辑</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/my.cnf</span><br></pre></td></tr></table></figure>
-
-<p>在[mysqld]下配置信息，注意是[mysqld]下，如果配置到其他地方会导致读取不到。</p>
-<p><img src="https://img-blog.csdnimg.cn/e6336420d100498a82e1880522c78b27.png" alt=" "></p>
-<p>这里的binlog-do-db可以不配置，根据需求来。</p>
-<h4 id="从机-1"><a href="#从机-1" class="headerlink" title="从机"></a>从机</h4><p>Windows下的MySQL配置文件默认在C:\Program Files\MySQL下，打开my.ini进行编辑</p>
-<p>同样，在[mysqld]下配置信息</p>
-<p><img src="https://img-blog.csdnimg.cn/f3672a7f87c44764a78de7dba128dbf5.png" alt="在这里插入图片描述"></p>
-<h3 id="第三步：重启服务"><a href="#第三步：重启服务" class="headerlink" title="第三步：重启服务"></a>第三步：重启服务</h3><h4 id="主机-2"><a href="#主机-2" class="headerlink" title="主机"></a>主机</h4><p>Linux下MySQL重启命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld.service</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/b710c2a6392340c4acb1171d7ac32d51.png" alt="在这里插入图片描述"></p>
-<h4 id="从机-2"><a href="#从机-2" class="headerlink" title="从机"></a>从机</h4><p>打开cmd先输入net stop mysql，然后再输入net start mysql</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net stop mysql</span><br><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/dfbcd6d95d7341c39c942c54ea08f38b.png" alt="在这里插入图片描述"></p>
-<h3 id="第四步：设置账号"><a href="#第四步：设置账号" class="headerlink" title="第四步：设置账号"></a>第四步：设置账号</h3><h4 id="主机-3"><a href="#主机-3" class="headerlink" title="主机"></a>主机</h4><p>通常，主从同步业务场景，是给予从库一个账号，正常是不会给予root账号的，这里我先使用我之前创建的账号zhku进行演示（你也可以使用root账号，但不建议）。</p>
-<p>先查看该账户是否具有主从同步的权限</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> Repl_slave_priv, Repl_client_priv <span class="keyword">from</span> mysql.user <span class="keyword">where</span> <span class="keyword">user</span> <span class="operator">=</span> <span class="string">&#x27;zhku&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/1aaea14311e34643aaf21d85604acbff.png" alt="在这里插入图片描述"></p>
-<p>显示没有赋予该权限</p>
-<p>赋予权限</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> replication slave, replication client <span class="keyword">on</span> <span class="operator">*</span>.<span class="operator">*</span> <span class="keyword">to</span> <span class="string">&#x27;zhku&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="第五步：查看状态"><a href="#第五步：查看状态" class="headerlink" title="第五步：查看状态"></a>第五步：查看状态</h3><h4 id="主机-4"><a href="#主机-4" class="headerlink" title="主机"></a>主机</h4><h5 id="查看master状态"><a href="#查看master状态" class="headerlink" title="查看master状态"></a>查看master状态</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> master status;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/52956461efe4460ba24d366a683f2547.png" alt="在这里插入图片描述"></p>
-<p>file：表示同步的bin-log信息从哪个文件开始；</p>
-<p>position：表示从file的哪个位置开始；</p>
-<p>binlog_do_db：表示同步哪一个库(如果在配置文件中没有设置，则是空)</p>
-<h4 id="从机-3"><a href="#从机-3" class="headerlink" title="从机"></a>从机</h4><h5 id="在从机上设置主服务器IP地址"><a href="#在从机上设置主服务器IP地址" class="headerlink" title="在从机上设置主服务器IP地址"></a>在从机上设置主服务器IP地址</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">change master <span class="keyword">to</span> master_host<span class="operator">=</span><span class="string">&#x27;120.***.***.110&#x27;</span>,master_port<span class="operator">=</span><span class="number">3306</span>,master_user<span class="operator">=</span><span class="string">&#x27;zhku&#x27;</span>,master_password<span class="operator">=</span><span class="string">&#x27;123456&#x27;</span>,master_log_file<span class="operator">=</span><span class="string">&#x27;mysql-bin.000001&#x27;</span>,master_log_pos<span class="operator">=</span><span class="number">156</span>;</span><br></pre></td></tr></table></figure>
-
-<p>这里设置master_host为主机的IP地址，master_user为登录用户，如zhku，设置master_password为密码，这里我的密码是123456，master_log_file为主机上查看master status的file，master_log_pos为主机上查看到的position。</p>
-<h5 id="开启slave"><a href="#开启slave" class="headerlink" title="开启slave"></a>开启slave</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">start</span> slave;</span><br></pre></td></tr></table></figure>
-
-<h5 id="查询slave状态"><a href="#查询slave状态" class="headerlink" title="查询slave状态"></a>查询slave状态</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> slave status;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://img-blog.csdnimg.cn/24b3cecfa3b74baa8460fdb7c2ca7a08.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qGD6IqxZXI=,size_15,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>结果太多，我这里以列显示好看一点。</p>
-<p>可以看到最关键的两个参数，倒数两个，Slave_IO_Running和Slave_SQL_Running，显示Yes则代表成功实现主从同步，第一个Slave_IO_State也显示正在等待主机发送事件信息。</p>
-<h4 id="到此为止就配置成功了！"><a href="#到此为止就配置成功了！" class="headerlink" title="到此为止就配置成功了！"></a>到此为止就配置成功了！</h4><h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><h4 id="第一个问题：在第三步重启服务时启动失败"><a href="#第一个问题：在第三步重启服务时启动失败" class="headerlink" title="第一个问题：在第三步重启服务时启动失败"></a>第一个问题：在第三步重启服务时启动失败</h4><p>原因是配置文件有问题，需要检查配置文件是否配置正确，如单词拼写，数据库是否存在等。</p>
-<h4 id="第二个问题：在第五步时从机查看slave-status时，Slave-IO-Running显示Connecting"><a href="#第二个问题：在第五步时从机查看slave-status时，Slave-IO-Running显示Connecting" class="headerlink" title="第二个问题：在第五步时从机查看slave status时，Slave_IO_Running显示Connecting"></a>第二个问题：在第五步时从机查看slave status时，Slave_IO_Running显示Connecting</h4><p><img src="https://img-blog.csdnimg.cn/42ec408a8aab455b8c7608b36d197999.png" alt="在这里插入图片描述"></p>
-<p>原因：可以继续查看后面的列，找到Last_IO_Error列</p>
-<p><img src="https://img-blog.csdnimg.cn/2a88ca0f134b4ff8b10bc62d626b22ce.png" alt="在这里插入图片描述"></p>
-<p>查看里面的报错显示的是Authentication plugin ‘caching_sha2_password’ reported error: Authentication requires secure connection.。</p>
-<p><img src="https://img-blog.csdnimg.cn/3de2bbb2f9894f3ea1827e41bd69f0dc.png" alt="在这里插入图片描述"></p>
-<p>前往主机查询</p>
-<p><img src="https://img-blog.csdnimg.cn/cf4fa2323eab4239916991ee2547c50c.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5qGD6IqxZXI=,size_18,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-<p>发现zhku账号与root账号的plugin值不同，需要将zhku账号的plugin值修改为mysql_native_password（使用update语句，这里不再赘述），修改后即可成功显示两个YES。</p>
-<p>这里也有可能报错信息不是这个问题，该列显示connecting的问题主要有三个，一个是网络问题，一个是账号密码不对，一个是master_log_file和master_log_pos设置不对。网络问题的话可以检查防火墙是否开启，笔者这里使用的是阿里云服务器，服务器上打开了安全组，Centos上打开了防火墙端口，所以可以访问，如果是虚拟机则要看桥接模式等，这里不再赘述。</p>
-<p>Linux上打开，关闭，查看防火墙的博文链接：</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45930241/article/details/123219592">https://blog.csdn.net/weixin_45930241&#x2F;article&#x2F;details&#x2F;123219592</a></p>
-<h4 id="第三个问题：在第五步时从机查看slave-status时，Slave-IO-Running显示No"><a href="#第三个问题：在第五步时从机查看slave-status时，Slave-IO-Running显示No" class="headerlink" title="第三个问题：在第五步时从机查看slave status时，Slave_IO_Running显示No"></a>第三个问题：在第五步时从机查看slave status时，Slave_IO_Running显示No</h4><p><img src="https://img-blog.csdnimg.cn/c185f1273f9e441d9d94046f59b68fb0.png" alt="在这里插入图片描述"></p>
-<p>同第二个问题，查询后面的信息列，看看报错原因是什么</p>
-<p><img src="https://img-blog.csdnimg.cn/566e3b566d804eecb4c5059e91cc42ad.png" alt="在这里插入图片描述"></p>
-<p>发现显示文件名字不一致</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> master status;</span><br></pre></td></tr></table></figure>
-
-<p>在从机上使用show master status命令查看</p>
-<p><img src="https://img-blog.csdnimg.cn/e7b70bebadfa48cd83ec1b790eebd534.png" alt="在这里插入图片描述"></p>
-<p>在主机上使用show master status命令查看</p>
-<p><img src="https://img-blog.csdnimg.cn/5a700da7c9154344a86ebae7e07e4814.png" alt="在这里插入图片描述"></p>
-<p>比对发现，File和Position不一致。</p>
-<p>使用stop slave命令停掉从机的slave，回到第五步，重新使用change master命令设置，最后再start slave即可，如果还不行，就再去检查两个机器的配置文件是否修改正确。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stop slave;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/09/MySQL%208.0%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/" data-id="cl2y4hpaa0000jo7jhppl47w3" data-title="" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-数据库优化" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-数据库优化" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96/" class="article-date">
   <time class="dt-published" datetime="2022-05-09T02:45:40.738Z" itemprop="datePublished">2022-05-09</time>
@@ -510,103 +420,28 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-newpapername" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/08/newpapername/" class="article-date">
-  <time class="dt-published" datetime="2022-05-08T14:44:35.000Z" itemprop="datePublished">2022-05-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2022/05/09/MySQL%208.0%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/08/newpapername/">newpapername</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>外币外币222</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/08/newpapername/" data-id="cl2y4hpaj0002jo7j1pnidy4r" data-title="newpapername" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/08/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-05-08T14:23:49.884Z" itemprop="datePublished">2022-05-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+          (no title)
         
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/08/hello-world/">Hello World</a>
-    </h1>
   
+    <a href="/2022/05/08/newpapername/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">newpapername</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/08/hello-world/" data-id="cl2y4hpag0001jo7j96z0cvjd" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
 
 
 </section>
