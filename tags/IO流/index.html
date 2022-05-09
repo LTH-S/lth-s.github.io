@@ -432,12 +432,60 @@
     // pjax
     var pjax = new Pjax({
     selectors: [
-      "title", //加载标题
-      "main", //加载主体框架部分
-      "header", //加载头部（文章页头图等）
+      "title",
+      "main",
+      "header",
     ]
    })
-</script>
+      
+          //加载valine
+   function LoadValine(){
+      $.getScript("https://cdn.staticfile.org/valine/1.4.14/Valine.min.js", function() {
+          
+        // 生成评论的代码
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        var valine = new Valine();
+        valine.init({
+          el: "#vcomments",
+          guest_info: guest_info,
+          app_id: "",
+          app_key: "",
+          placeholder: "",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: false,
+          recordIP: false,
+          serverURLs: ""
+        })
+    });
+  };
+  
+        //pjax开始时加载函数
+      document.addEventListener('pjax:send', function (){
+    $(".loading").css("display", "block");//加载转圈圈的css
+     });
+      
+       // pjax加载结束后执行函数
+      document.addEventListener('pjax:complete', function (){
+      $(".loading").css("display", "none");
+        $.getScript("/js/lazyload.js");
+        $.getScript("/js/main.js");
+        $.getScript("/js/debouncer.js");
+      });
+      
+      // 窗口监听load(加载、刷新)事件，执行函数
+      window.addEventListener('load',function(){
+       $.getScript("/js/main.js");
+      });
+      
+  </script>
+
 
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":350},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
