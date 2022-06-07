@@ -7,12 +7,6 @@ const ap = new APlayer({
 	mutex: true,
     audio: [
 	{
-		name: "枫（live）",
-		artist: '王小草',
-		url: 'https://dl.stream.qqmusic.qq.com/C400003tsQO04TSQz1.m4a?guid=3507016900&vkey=65AAD4FB55DBB4D731C8AF3EA0CB6D9D0ECD1BF25F1A0CBBB373D8B3D33F9FB17B329643DB9E1133564A2B0D72FC8C4FAB6AC0068E52806D&uin=1306910276&fromtag=120002.mp3',
-		cover: 'https://y.qq.com/music/photo_new/T001R300x300M000004TlNhm1u4K2c.jpg?max_age=2592000',
-	},
-	{
         name: "浴室",
         artist: 'deca joins',
         url: 'http://music.163.com/song/media/outer/url?id=483378334.mp3',
